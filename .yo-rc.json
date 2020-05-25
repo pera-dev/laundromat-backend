@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.laundromat.app"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "laundromat",
+    "packageName": "com.laundromat.app",
+    "packageFolder": "com/laundromat/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "YmE3MDBlZTA5YzI4NjlkNWI1ZjNlOGJmMjJkN2U0NmVlNTQ5ZWNiNDRmYTQ0MTNkOGE5YWYxOTNmMzU2YWU5MGQ0MTIyMzRhZjM4NjQ1ZmFkNjQyNDcwMTEwMTY0MDk2ZDk4NjVhODIwM2I3YzllMzljNDkwN2JjZTFhYTM3ZDU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1589992749563,
+    "testFrameworks": [],
+    "jhiPrefix": "laundro",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true
+  }
+}
