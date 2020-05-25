@@ -18,7 +18,7 @@ public class FirebaseConfiguration {
 
     @Bean
     public void init() throws IOException {
-        FileInputStream refreshToken = new FileInputStream("src/main/resources/config/firebase-auth.json");
+        FileInputStream refreshToken = new FileInputStream("src/main/resources/config/laundromat-test-firebase-adminsdk.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
             .setCredentials(GoogleCredentials.fromStream(refreshToken))
