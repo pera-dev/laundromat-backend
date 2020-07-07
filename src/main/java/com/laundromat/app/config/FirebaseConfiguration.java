@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -16,9 +17,9 @@ public class FirebaseConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(LiquibaseConfiguration.class);
 
-    @Bean
+    @PostConstruct
     public void init() throws IOException {
-        FileInputStream refreshToken = new FileInputStream("src/main/resources/config/firebase-auth.json");
+        FileInputStream refreshToken = new FileInputStream("src/main/resources/config/firebase-credentials.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
             .setCredentials(GoogleCredentials.fromStream(refreshToken))

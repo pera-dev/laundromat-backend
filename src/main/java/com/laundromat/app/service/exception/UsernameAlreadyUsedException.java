@@ -1,4 +1,4 @@
-package com.laundromat.app.service;
+package com.laundromat.app.service.exception;
 
 public class UsernameAlreadyUsedException extends RuntimeException {
 

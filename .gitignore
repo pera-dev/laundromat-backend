@@ -145,5 +145,4 @@ Desktop.ini
 ######################
 .eslintcache
 
-
-src/main/resources/config/firbase-auth
+src/main/resources/config/firebase-credentials.json

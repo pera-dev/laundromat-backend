@@ -10,6 +10,9 @@ import com.laundromat.app.security.AuthoritiesConstants;
 import com.laundromat.app.security.SecurityUtils;
 import com.laundromat.app.service.dto.UserDTO;
 
+import com.laundromat.app.service.exception.EmailAlreadyUsedException;
+import com.laundromat.app.service.exception.InvalidPasswordException;
+import com.laundromat.app.service.exception.UsernameAlreadyUsedException;
 import io.github.jhipster.security.RandomUtil;
 
 import org.slf4j.Logger;
