@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity LaundryOrder.
+    -->
+    <changeSet id="20200716111818-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="payment_id"
+                                 baseTableName="laundry_order"
+                                 constraintName="fk_laundry_order_payment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_account_id"
+                                 baseTableName="laundry_order"
+                                 constraintName="fk_laundry_order_user_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_account"/>
+
+    </changeSet>
+</databaseChangeLog>

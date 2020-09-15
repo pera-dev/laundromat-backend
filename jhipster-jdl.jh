@@ -1,0 +1,83 @@
+entity UserAccount{
+	accountUUID UUID,
+    accountName String,
+    companyName String,
+    accountEmail String,
+    mobileNo String
+    accountType AccountType,
+    lastLogin LocalDate,
+    defaultPaymentMethod PaymentMethod,
+}
+
+enum AccountType{
+	CUSTOMER,
+    DELIVERY,
+    COLLECTOR
+}
+entity LaundryOrder{
+	orderID String,
+    orderStatus OrderStatus,
+    selectedSlot LocalDate,
+    placedAt String
+    placedOn LocalDate
+    deliveredAt	String
+    deliveredOn LocalDate,
+}
+
+entity Payment{
+	paymentId Integer,
+    paymentUUID UUID,
+    paymentMethod PaymentMethod,
+    paymentAmount Float,
+    paymentStatus PaymentStatus,
+}
+enum PaymentStatus{
+	SUCCESS,
+    FAILED,
+    IN_PROGRESS,
+    RETURN
+}
+enum PaymentMethod{
+	CREDITCARD,
+    COD
+}
+
+entity LaundryItem{
+ 	itemId Integer,
+    itemName String,
+    washType WashType,
+    itemQty Integer,
+}
+
+enum WashType {
+	WASHIRON,
+    WASHFOLD,
+    DRYCLEAN,
+    IRON,
+    MIXED
+}
+
+
+enum OrderStatus{
+	IN_PROGRESS,
+    RECEVIED,
+    IN_LAUNDRY,
+    PROCESSING,
+    IN_DELIVERY,
+    COMPLETED
+}
+
+relationship OneToOne{
+    LaundryOrder to Payment
+}
+relationship OneToMany{
+    LaundryOrder to LaundryItem,
+    UserAccount to LaundryOrder
+}
+relationship OneToOne{
+    UserAccount{user(id)} to User
+}
+service UserAccount with serviceClass
+service LaundryOrder with serviceClass
+service Payment with serviceClass
+

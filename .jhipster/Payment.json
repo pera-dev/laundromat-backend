@@ -1,0 +1,47 @@
+{
+  "name": "Payment",
+  "fields": [
+    {
+      "fieldName": "paymentId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "paymentUUID",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "PaymentMethod",
+      "fieldValues": "CREDITCARD,COD"
+    },
+    {
+      "fieldName": "paymentAmount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "paymentStatus",
+      "fieldType": "PaymentStatus",
+      "fieldValues": "SUCCESS,FAILED,IN_PROGRESS,RETURN"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "laundryOrder",
+      "otherEntityRelationshipName": "payment",
+      "relationshipName": "laundryOrder",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200716111918",
+  "entityTableName": "payment",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

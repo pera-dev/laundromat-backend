@@ -1,0 +1,66 @@
+{
+  "name": "UserAccount",
+  "fields": [
+    {
+      "fieldName": "accountUUID",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "accountName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobileNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountType",
+      "fieldType": "AccountType",
+      "fieldValues": "CUSTOMER,DELIVERY,COLLECTOR"
+    },
+    {
+      "fieldName": "lastLogin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "defaultPaymentMethod",
+      "fieldType": "PaymentMethod",
+      "fieldValues": "CREDITCARD,COD"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "user",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "laundryOrder",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "laundryOrder"
+    }
+  ],
+  "changelogDate": "20200716111718",
+  "entityTableName": "user_account",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
