@@ -15,7 +15,7 @@ import java.util.Objects;
  * An authority (a security role) used by Spring Security.
  */
 @Entity
-@Table(name = "true_authority")
+@Table(name = "laundro_authority")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Authority implements Serializable {
 

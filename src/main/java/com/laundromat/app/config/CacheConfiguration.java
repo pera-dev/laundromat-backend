@@ -42,6 +42,12 @@ public class CacheConfiguration {
             createCache(cm, com.laundromat.app.domain.User.class.getName());
             createCache(cm, com.laundromat.app.domain.Authority.class.getName());
             createCache(cm, com.laundromat.app.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.laundromat.app.domain.UserAccount.class.getName());
+            createCache(cm, com.laundromat.app.domain.UserAccount.class.getName() + ".laundryOrders");
+            createCache(cm, com.laundromat.app.domain.LaundryOrder.class.getName());
+            createCache(cm, com.laundromat.app.domain.LaundryOrder.class.getName() + ".laundryItems");
+            createCache(cm, com.laundromat.app.domain.Payment.class.getName());
+            createCache(cm, com.laundromat.app.domain.LaundryItem.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

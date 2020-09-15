@@ -1,0 +1,68 @@
+{
+  "name": "LaundryOrder",
+  "fields": [
+    {
+      "fieldName": "orderID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderStatus",
+      "fieldType": "OrderStatus",
+      "fieldValues": "IN_PROGRESS,RECEVIED,IN_LAUNDRY,PROCESSING,IN_DELIVERY,COMPLETED"
+    },
+    {
+      "fieldName": "selectedSlot",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "placedAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "placedOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "deliveredAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveredOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "laundryOrder",
+      "relationshipName": "payment",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "laundryItem",
+      "otherEntityRelationshipName": "laundryOrder",
+      "relationshipName": "laundryItem"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "laundryOrder",
+      "relationshipName": "userAccount",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200716111818",
+  "entityTableName": "laundry_order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

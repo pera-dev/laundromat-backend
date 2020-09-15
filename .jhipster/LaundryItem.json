@@ -1,0 +1,42 @@
+{
+  "name": "LaundryItem",
+  "fields": [
+    {
+      "fieldName": "itemId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "itemName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "washType",
+      "fieldType": "WashType",
+      "fieldValues": "WASHIRON,WASHFOLD,DRYCLEAN,IRON,MIXED"
+    },
+    {
+      "fieldName": "itemQty",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "laundryOrder",
+      "otherEntityRelationshipName": "laundryItem",
+      "relationshipName": "laundryOrder",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200716112018",
+  "entityTableName": "laundry_item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
